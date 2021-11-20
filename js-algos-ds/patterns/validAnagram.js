@@ -22,16 +22,32 @@ const validAnagram = (str1, str2) => {
       return false;
     }
   }
+  return true;
+};
 
-  for (let key in freqCounter) {
-    if (freqCounter[key] !== 0) {
+const validAnagram2 = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  let freqCounter = {};
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str1[i];
+    freqCounter[letter] ? (freqCounter += 1) : (freqCounter = 1);
+  }
+
+  for (let i = 0; i < str2.length; i++) {
+    let letter = str2[i];
+    if (!freqCounter[letter]) {
       return false;
+    } else {
+      freqCounter[letter] -= 1;
     }
   }
   return true;
 };
 
-console.log(validAnagram("", ""));
-console.log(validAnagram("aaz", "zza"));
-console.log(validAnagram("anagram", "nagaram"));
-console.log(validAnagram('rat', 'car'));
+// console.log(validAnagram("", ""));
+// console.log(validAnagram("aaz", "zza"));
+// console.log(validAnagram("anagram", "nagaram"));
+// console.log(validAnagram("rat", "car"));
