@@ -31,10 +31,14 @@ const sameRefactored = (arr1, arr2) => {
   let freqCounter1 = {};
   let freqCounter2 = {};
   for (let val of arr1) {
-    freqCounter1[val] = (freqCounter1[val] || 0) + 1;
+    freqCounter1[val] = (freqCounter1[val] ?? 0) + 1;
   }
+  // a ?? 0
+  // a ? a : 0
+  // a || 0
+  // if (a !== undefined) { a} else {0}
   for (let val of arr2) {
-    freqCounter2[val] = (freqCounter2[val] || 0) + 1;
+    freqCounter2[val] = (freqCounter2[val] ?? 0) + 1;
   }
 
   for (let key in freqCounter1) {
