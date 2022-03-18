@@ -29,6 +29,10 @@ function areThereDuplicates2() {
   return false;
 }
 
-console.log(areThereDuplicates2(1,2,3))  // false
-console.log(areThereDuplicates2(1,2,2))  // true
-console.log(areThereDuplicates2('a','b','c','a'))  // true
+// One Liner Solution
+function areThereDuplicatesOneLinerSol() {
+  return new Set(arguments).size !== arguments.length;
+}
+console.log(areThereDuplicatesOneLinerSol(1,2,3))  // false
+console.log(areThereDuplicatesOneLinerSol(1,2,2))  // true
+console.log(areThereDuplicatesOneLinerSol('a','b','c','a'))  // true
