@@ -7,7 +7,6 @@ function averagePair(arr, targetVal) {
   let i = 0;
   for (let j = 1; j < arr.length; j++) {
     let average = arr[i] + arr[j] / 2;
-    // console.log("averae", average);
     if (average === targetVal) {
       return true;
     } else {
