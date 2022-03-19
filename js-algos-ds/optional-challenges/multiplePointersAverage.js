@@ -4,7 +4,6 @@
 // time O(n), Space O(1)
 
 function averagePair(arr, targetVal) {
-  if (arr.length === 0) return false;
   let i = 0;
   for (let j = 1; j < arr.length; j++) {
     let average = arr[i] + arr[j] / 2;
@@ -15,6 +14,19 @@ function averagePair(arr, targetVal) {
       i++;
       arr[i] = arr[j];
     }
+  }
+  return false;
+}
+
+// sol 2
+function averagePair2(arr, num){
+  let start = 0
+  let end = arr.length-1;
+  while(start < end){
+    let avg = (arr[start]+arr[end]) / 2 
+    if(avg === num) return true;
+    else if(avg < num) start++
+    else end--
   }
   return false;
 }
