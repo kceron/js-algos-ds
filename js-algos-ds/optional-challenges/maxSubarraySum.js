@@ -5,14 +5,15 @@
 function maxSubarraySum(arr, num){
   if (arr.length < num) return null;
   let max = 0;
-  let temp = 0;
-  for (let i = 0; i < num; i++) {
-    max += arr[i];
+  let sum = 0;
+  
+  for(let i = 0; i < num; i++) {
+    sum += arr[i]
   }
-  temp = max;
-  for (let i = num; i < arr.length; i++) {
-    temp = temp - arr[i - num] + arr[i];
-    max = Math.max(max, temp);
+  max = sum;
+  for(let i = num; i < arr.length; i++) {
+    sum = sum - arr[i - num] + arr[i];
+    max = Math.max(sum, max);
   }
   return max;
 }
