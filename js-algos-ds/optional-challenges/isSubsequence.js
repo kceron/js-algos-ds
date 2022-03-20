@@ -36,7 +36,7 @@ function isSubsequence3(str1, str2) {
   return isSubsequence3(str1, str2.slice(1))
 }
 
-console.log(isSubsequence3('hello', 'hello world')); // true
-console.log(isSubsequence3('sing', 'sting')); // true
-console.log(isSubsequence3('abc', 'abracadabra')); // true
-console.log(isSubsequence3('abc', 'acb')); // false (order matters)
+console.log(isSubsequence('hello', 'hello world')); // true
+console.log(isSubsequence('sing', 'sting')); // true
+console.log(isSubsequence('abc', 'abracadabra')); // true
+console.log(isSubsequence('abc', 'acb')); // false (order matters)
