@@ -31,8 +31,10 @@ const sameRefactored = (arr1, arr2) => {
   let freqCounter1 = {};
   let freqCounter2 = {};
   for (let val of arr1) {
+    // freqCounter1[val] = freqCounter1[val] || 0 + 1;
     freqCounter1[val] = (freqCounter1[val] ?? 0) + 1;
   }
+  console.log(freqCounter1)
   // a ?? 0
   // a ? a : 0
   // a || 0
@@ -40,7 +42,7 @@ const sameRefactored = (arr1, arr2) => {
   for (let val of arr2) {
     freqCounter2[val] = (freqCounter2[val] ?? 0) + 1;
   }
-
+  console.log(freqCounter2)
   for (let key in freqCounter1) {
     if (!(key ** 2 in freqCounter2)) {
       return false;
@@ -53,7 +55,6 @@ const sameRefactored = (arr1, arr2) => {
   return true;
 };
 
-
-// console.log(sameRefactored([1,2,3,2], [9,1,4,4]));
+console.log(sameRefactored([1,2,3,2], [9,1,4,4]));
 // console.log(sameRefactored([1,2,3], [1,9]));
 // console.log(sameRefactored([1,2,1], [4,4,1]));

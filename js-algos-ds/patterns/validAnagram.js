@@ -14,7 +14,7 @@ const validAnagram = (str1, str2) => {
   for (let val of str1) {
     freqCounter[val] = (freqCounter[val] ?? 0) + 1;
   }
-
+  // console.log(freqCounter)
   for (let char of str2) {
     if (freqCounter[char] > 0) {
       freqCounter[char]--;
@@ -22,6 +22,7 @@ const validAnagram = (str1, str2) => {
       return false;
     }
   }
+  
   return true;
 };
 
@@ -30,10 +31,10 @@ const validAnagram2 = (str1, str2) => {
     return false;
   }
 
-  let freqCounter = {};
+  const freqCounter = {};
   for (let i = 0; i < str1.length; i++) {
     let letter = str1[i];
-    freqCounter[letter] ? (freqCounter += 1) : (freqCounter = 1);
+    freqCounter[letter] ? (freqCounter[letter] += 1) : (freqCounter[letter] = 1);
   }
 
   for (let i = 0; i < str2.length; i++) {
@@ -47,7 +48,7 @@ const validAnagram2 = (str1, str2) => {
   return true;
 };
 
-// console.log(validAnagram("", ""));
-// console.log(validAnagram("aaz", "zza"));
-// console.log(validAnagram("anagram", "nagaram"));
-// console.log(validAnagram("rat", "car"));
+console.log(validAnagram2("", ""));
+console.log(validAnagram2("aaz", "zza"));
+console.log(validAnagram2("anagram", "nagaram"));
+console.log(validAnagram2("rat", "car"));
